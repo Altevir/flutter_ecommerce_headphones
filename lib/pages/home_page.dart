@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce_headphones/models/product.dart';
 import 'package:flutter_ecommerce_headphones/pages/product_detail_page.dart';
@@ -6,7 +5,6 @@ import 'package:flutter_ecommerce_headphones/services/fake_service.dart';
 import 'package:flutter_ecommerce_headphones/shared/app_colors.dart';
 import 'package:flutter_ecommerce_headphones/widgets/card_phone.dart';
 import 'package:flutter_ecommerce_headphones/widgets/card_speaker.dart';
-
 import '../widgets/header_section.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,12 +21,6 @@ class _HomePageState extends State<HomePage> {
 
   void onTapShopCart() {
     debugPrint('evento onTapShopCart executado');
-  }
-
-  void getListSuggestions() {
-    for (var item in listPhones) {
-      listSuggestions.add(item.name);
-    }
   }
 
   @override
