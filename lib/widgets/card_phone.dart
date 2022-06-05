@@ -50,13 +50,14 @@ class _CardPhoneVerticalState extends State<CardPhoneVertical> {
                   height: 140,
                 ),
               ),
-              const SizedBox(height: 20),
+              const Spacer(),
               Text(
                 widget.name,
                 style: const TextStyle(fontSize: 31, color: Colors.black),
                 textAlign: TextAlign.left,
               ),
               Expanded(
+                flex: 2,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

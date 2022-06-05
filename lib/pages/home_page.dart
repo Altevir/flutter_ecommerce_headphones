@@ -17,7 +17,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Product> listPhones = FakeService.listHeadPhones;
   final List<Product> listSpeakers = FakeService.listSpeakers;
-  final List<String> listSuggestions = [];
 
   void onTapShopCart() {
     debugPrint('evento onTapShopCart executado');
@@ -120,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                     const HeaderSection(title: 'Exclusive', subtitle: 'Headphones'),
                     const SizedBox(height: 20),
                     SizedBox(
-                      height: sizeHeight < 700 ? sizeHeight * 0.40 : sizeHeight * 0.32,
+                      height: sizeHeight * 0.32,
                       child: ListView.builder(
                           itemCount: listPhones.length,
                           scrollDirection: Axis.horizontal,
@@ -150,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 14),
                     const HeaderSection(title: 'Speakers', subtitle: 'Collections'),
                     SizedBox(
-                      height: sizeHeight < 700 ? sizeHeight * 0.24 : sizeHeight * 0.20,
+                      height: sizeHeight * 0.20,
                       child: ListView.builder(
                         shrinkWrap: true,
                         itemCount: listSpeakers.length,

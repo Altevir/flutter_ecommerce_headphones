@@ -24,17 +24,23 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    final sizeHeight = MediaQuery.of(context).size.height;
+    final sizeWidth = MediaQuery.of(context).size.width;
+    final smallMobile = sizeHeight < 850;
+
     return Scaffold(
       backgroundColor: AppColors.colorBlack1D,
       body: Stack(
         clipBehavior: Clip.none,
         children: [
           Positioned(
-            top: -200,
-            left: -80,
+            left: smallMobile ? -80 : -120,
+            top: smallMobile ? -290 : -415,
             child: SvgPicture.asset(
               'images/oval.svg',
               color: AppColors.colorRed,
+              width: sizeWidth,
+              height: sizeHeight < 850 ? 620 : 800,
             ),
           ),
           Padding(
@@ -63,8 +69,8 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                   duration: const Duration(milliseconds: 1200),
                   child: Text(
                     widget.product.name.split(' ')[1],
-                    style: const TextStyle(
-                      fontSize: 105,
+                    style: TextStyle(
+                      fontSize: sizeHeight < 850 ? 105 : 155,
                       color: AppColors.colorWhite,
                       height: 1,
                     ),
@@ -224,14 +230,14 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
             ),
           ),
           Positioned(
-            left: MediaQuery.of(context).size.width * 0.12,
-            top: 148,
+            width: sizeWidth,
+            top: smallMobile ? 154 : 152,
             child: FadeInDown(
               duration: const Duration(milliseconds: 1500),
               from: 40,
               child: Image.asset(
                 'images/${widget.product.image}',
-                height: 355,
+                height: smallMobile ? 290 : 355,
               ),
             ),
           ),
